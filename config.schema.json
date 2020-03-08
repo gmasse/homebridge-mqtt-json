@@ -1,0 +1,38 @@
+{
+  "pluginAlias": "mqtt-json",
+  "pluginType": "accessory",
+  "singular": false,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "MQTT Sensor",
+				"description": "Plugin name as displayed in the Homebridge log"
+      },
+      "url": {
+        "title": "URL",
+        "type": "string",
+        "default": "mqtt://192.168.0.1",
+        "format": "uri",
+				"required": true,
+				"description": "MQTT broker URL"
+      },
+			"topic": {
+        "title": "MQTT topic",
+        "type": "string",
+        "default": "topic/tosubscribe/data",
+				"required": true,
+				"description": "MQTT topic to subscribe"
+      },
+			"property": {
+        "title": "JSON property",
+        "type": "string",
+        "default": "param_name",
+				"required": true,
+				"description": "JSON property (parameter) whose value will be returned"
+      }
+    }
+  }
+}
